@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    background-color: #0B0F19;
+    color: #F3F4F6;
+    overflow-x: hidden;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #6366F1 #111827;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    background: #111827;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: #6366F1;
+    border-radius: 4px;
+  }
+  *:focus-visible {
+    outline: 2px solid #22D3EE;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .vision-card {
+    @apply bg-vision-surface border border-vision-surfaceLight rounded-xl p-6 transition-all duration-300;
+  }
+  .vision-card:hover {
+    @apply border-vision-primary/50 shadow-lg shadow-vision-primary/10;
+  }
+  .vision-btn {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center gap-2 justify-center;
+  }
+  .vision-btn-primary {
+    @apply vision-btn bg-vision-primary text-white hover:bg-vision-primary/90;
+  }
+  .vision-btn-outline {
+    @apply vision-btn border-2 border-vision-primary text-vision-primary hover:bg-vision-primary hover:text-white;
+  }
+  .vision-input {
+    @apply w-full bg-vision-surface border border-vision-surfaceLight rounded-lg px-4 py-3 text-vision-text placeholder-vision-textMuted focus:border-vision-primary focus:ring-1 focus:ring-vision-primary transition-all;
+  }
+  .vision-label {
+    @apply block text-sm font-medium text-vision-textMuted mb-2;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-l from-vision-primary to-vision-accent bg-clip-text text-transparent;
+  }
+  .glow-line {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-vision-primary to-transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
